@@ -1,4 +1,4 @@
 module.exports = {
-  minifiedLibraryFileName: "filename.js",
+  minifiedLibraryFileName: "filename.min.js",
   minifiedLibraryName: "libname",  
 }

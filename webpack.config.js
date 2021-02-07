@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: projectInfo.minifiedFileName,
+    filename: projectInfo.minifiedLibraryFileName,
     library: projectInfo.minifiedLibraryName,
     libraryTarget: 'var',
   },
