@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/indexNpm.ts',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'lib'),  
     filename: './index.js',  
