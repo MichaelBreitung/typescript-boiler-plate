@@ -1,13 +1,14 @@
 {
   "name": "yourprojectname",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your project description",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {    
     "build": "webpack --config webpack.config.js",
     "build:dev": "webpack --config webpack.config.dev.js",
-    "build:npm": "tsc"
+    "build:npm": "webpack --config webpack.config.npm.js",
+    "build:npm-es6": "tsc"
   },
   "keywords": [
     "Typescript"

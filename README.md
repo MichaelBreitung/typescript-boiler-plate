@@ -14,7 +14,17 @@ For the minified version, terser is used to minify the code. If you prepend all 
 
 Build: _npm run build:npm_
 
-An ES6 module is created and place in the lib folder. Using ES6 here, allows code that uses this package to tree-shake the imports.
+Builds a _jscommon_ single file package with additional type definition files and places it inside the lib folder. 
+
+Use this build if you don't care about tree shaking and rather want a package that's widely usable
+
+Also, if you have a package that uses CSS Modules you might want to go with this options, because the ES6 option below does not properly work as dependency with webpack projects.
+
+## Npm ES6 Version
+
+Build: _npm run build:npm-es6_
+
+An ES6 module is created and placed in the lib folder. Using ES6 here, allows code that uses this package to tree-shake the imports.
 
 You need to _npm install typescript -g_ to be able to run build the npm version.
 

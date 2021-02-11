@@ -1,15 +1,12 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
-const projectInfo = require('./projectInfo');
 
 module.exports = {
   mode: 'production',
   entry: './src/index.ts',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: projectInfo.minifiedLibraryFileName,
-    library: projectInfo.minifiedLibraryName,
-    libraryTarget: 'var',
+    path: path.resolve(__dirname, 'lib'),  
+    filename: './index.js',  
+    libraryTarget: 'commonjs',
   },
   module: {
     rules: [
@@ -31,12 +28,16 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[local]_[hash:base64:3]',
+                localIdentName: '[local]',
               },
             },
           },
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.svg$/,
+        use: 'raw-loader',
       },
     ],
   },
@@ -44,20 +45,6 @@ module.exports = {
     extensions: ['.ts', '.js'],
   },
   optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {          
-          mangle: {
-            properties: {
-              regex: /^_/,
-            },
-          },
-          compress: {
-            drop_console: true,
-          },
-        },
-      })
-    ],
+    minimize: false,
   },
 };
