@@ -37,6 +37,10 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.svg$/,
+        use: 'raw-loader',
+      },
     ],
   },
   devtool: 'inline-source-map',
