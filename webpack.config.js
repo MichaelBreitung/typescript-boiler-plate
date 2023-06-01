@@ -15,12 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts?$/,
-        use: [{
-          loader: 'ts-loader',
-          options: {
-              configFile: "tsconfig.webpack.json"
-          }
-        }],
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
@@ -54,6 +49,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
+    usedExports: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {          
