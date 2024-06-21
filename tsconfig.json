@@ -3,7 +3,7 @@
     "target": "ES6",
     "useDefineForClassFields": true,
     "module": "ES6",
-    "lib": ["ES6", "DOM", "DOM.Iterable"],
+    "lib": ["ES2016", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "outDir": "lib-types",
 
