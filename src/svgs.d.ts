@@ -3,4 +3,4 @@
  * @copyright Michael Breitung Photography (www.mibreit-photo.com)
  */
 
-declare module "*.svg";
+declare module '*.svg';

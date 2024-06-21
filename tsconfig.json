@@ -1,14 +1,24 @@
 {
   "compilerOptions": {
-    "outDir": "./lib-es6/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "allowJs": true,
+    "target": "ES6",
+    "useDefineForClassFields": true,
+    "module": "ES6",
+    "lib": ["ES6", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "outDir": "lib-types",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "declaration": true,
-    "strictNullChecks": true,
-    "moduleResolution": "node",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+
+    /* Linting */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],  
+  "include": ["src"]
 }

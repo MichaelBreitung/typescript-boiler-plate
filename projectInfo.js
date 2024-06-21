@@ -1,4 +1,2 @@
-module.exports = {
-  minifiedLibraryFileName: "filename.min.js",
-  minifiedLibraryName: "libname",  
-}
+export const LibraryFileName = 'filename';
+export const LibraryName = 'libname';

@@ -1,27 +1,38 @@
 # Typescript Boilerplate
 
-This project can be used as base for typescript projects. There are different webpack configurations included to create a minified version for direct integration into a webpage, an npm package and a development version with source maps.
+This project can be used as base for TypeScript projects. The project is setup using [Vite](https://vitejs.dev/guide/). Under "vite.config.js", you'll find the custom [Rollup](https://rollupjs.org/) config containing different outputs. Based on your project, you can remove obsolete outputs.
 
-## Minified Version
+## Prerequisites
 
-Build: _npm run build_
+This project uses a Dev Container to provide the required tools for Web Development. You must have VS Code and the Dev Containers extension installed on your host machine as well as the Docker Engine. On Windows, you can use Docker Desktop, for example. To avoid problems with the mounting of ssh keys, it is recommended, though, to use WSL2 with a Ubuntu distribution and install Docker there.
 
-Intended to be directly loaded into an HTML page using the _script_ tag. The _minifiedLibraryName_ you specify in _projectInfo.js_ will be the variable name by which you can use the library in the homepage. The _minifiedLibraryFileName_ will be the name you use as the _src_ in the _script_ tag.
+Here are three video tutorials that will get you started with Docker and Dev Containers:
 
-For the minified version, terser is used to minify the code. If you prepend all private properties and methods with an underscore, terser will minimize those names. Console logs are also removed. For debugging, build the *Developement Version*, which will still include the console logs.
+- [Where Dev Containers are helpful](https://youtu.be/9F-jbT-pHkg?si=yW4RThXZNC0SMIyl)
+- [How to create a custom Dev Container](https://youtu.be/7P0pTECkiN8?si=51YPKbUzL7OlAs80)
+- [How to configure VS Code Extenstions and Settings in a Dev Container](https://youtu.be/W84R1CxtF0c?si=YBhBRzKk1lgCKEyz)
 
-## Npm Version (CommonJS + ES6)
+To prepare the project:
 
-Build: _npm run build:npm_
+1. Clone or download the repository.
+2. Open the project folder in VSCode.
+3. `CTRL+Shift+P` and enter "Dev Containers: Rebuild and Reopen in Container".
+4. Inside the Dev Container run: `npm i`.
 
-Builds a _CommonJS_ single file package and places it inside the *lib* folder. The type definitions are placed in the *lib-es6* folder together with the ES6 version of the library.
+## Development
 
-The *package.json* is setup to provide a *main*, *module* and *types* field. This way a project that uses your lib with Webpack or Rollup can make use of the ES6 version to enable tree shaking. The *CommonJS* version inside *lib* provides backwards compatibility.
+Source code is located under "src". Before you make changes, start the development server running `npm run dev`. You can then navigate to different test pages in the browser.
 
-**Note:** If you have a package that uses SVGs, this might not work in React.JS, if the *module* field is set. ES6 modules in a typical React.js project will not properly resolve SVGs as it's setup in this boilerplate. You might either want to only provide the *main* field, or include the SVGs directly in code without import.
+To see changes taking effect, you have to press `r + Enter` in the console window that is currently running the development server. It will restart the server and reload the page. Automatic reloading will only work, if your host system is Linux based. If your host system is Windows, file changes are not properly propagated to the Dev Container and Vite will not recognize those automatically.
 
-## Development Version
+## Build
 
-Build: _npm run build:dev_
+Run `npm run build` to create the ES6 library to be used in other projects as dependency, the CommonJS library to be used in Node.js projects, and the IIFE minimized JavaScript library for inclusion in HTML pages.
 
-It will also build a lib that can be integrated directly into a homepage - same as the minified version - but it will include source maps for debugging.
+The three versions are located in three different folders:
+
+- **lib** - This folder will contain the ES6 version to be used as dependency in other ES6+ or TypeScript projects. Using this version will enable Tree-Shaking.
+- **lib-cjs** - This folder contains a CommonJS build of the library. It can be used in Node.js projects.
+- **lib-iife** - This folder contains a build targeting browser use via the ``<script>`` tag. 
+
+All code is minified per default. Console logs are stripped.
