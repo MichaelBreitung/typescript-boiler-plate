@@ -9,8 +9,9 @@
   <body>
     <div id="app"></div>
     <script type="module">
-      import { test } from '/src/index.ts';
+      import { test, isValidUserData } from '/src/index.ts';
       test();
+      isValidUserData({id: 1, name: "John", surname: "B"});
     </script>
   </body>
 </html>

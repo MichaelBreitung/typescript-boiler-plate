@@ -19,11 +19,23 @@ To prepare the project:
 3. `CTRL+Shift+P` and enter "Dev Containers: Rebuild and Reopen in Container".
 4. Inside the Dev Container run: `npm i`.
 
+## Dependencies
+
+### Typia
+
+[Typia](https://github.com/samchon/typia) is used for runtime type parsing and validation. 
+Use it at the interface level of the library you create to ensure that incoming types match the static types you define.
+
 ## Development
 
-Source code is located under "src". Before you make changes, start the development server running `npm run dev`. You can then navigate to different test pages in the browser.
+Source code is located under "src". 
+Before you make changes, start the development server running `npm run dev`. 
+You can then navigate to different test pages in the browser.
 
-To see changes taking effect, you have to press `r + Enter` in the console window that is currently running the development server. It will restart the server and reload the page. Automatic reloading will only work, if your host system is Linux based. If your host system is Windows, file changes are not properly propagated to the Dev Container and Vite will not recognize those automatically.
+To see changes taking effect, you have to press `r + Enter` in the console window that is currently running the development server. 
+It will restart the server and reload the page. 
+Automatic reloading will only work, if your host system is Linux based. 
+If your host system is Windows, file changes might not be properly propagated to the Dev Container and Vite will not recognize those automatically.
 
 ## Build
 

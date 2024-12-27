@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { LibraryName, LibraryFileName } from './projectInfo';
+import UnpluginTypia from '@ryoppippi/unplugin-typia/vite';
 
 import strip from '@rollup/plugin-strip';
 import { createFilter } from '@rollup/pluginutils';
@@ -35,7 +36,7 @@ export default defineConfig({
       generateScopedName: 'mbg__[local]', // mbg prefix for mibreit gallery
     },
   },
-  plugins: [svgImportPlugin()],
+  plugins: [UnpluginTypia({}), svgImportPlugin()],
   build: {
     sourcemap: false,
     emptyOutDir: true,

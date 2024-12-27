@@ -1,4 +1,5 @@
 import testSVG from './test.svg';
+import typia from 'typia';
 
 export class TestClass {
   private _testMember: string;
@@ -12,9 +13,33 @@ export class TestClass {
   }
 }
 
+/** Just a simple example method that creates a test class,
+ * prints it and also prints the content of a svg as string */
 export const test = () => {
   const test = new TestClass();
   console.log('Class: ' + test);
 
   console.log('SVG: ', testSVG);
+};
+
+export type TUserData = {
+  id: number;
+  name: string;
+  surname: string;
+  nick?: string | null;
+  age?: number | null;
+  friends?: string | null;
+};
+
+const checkUserData = typia.createIs<TUserData>();
+
+/** Another simple example method that validates the content of an unknown user
+ * object using Typie
+ */
+export const isValidUserData = (user: unknown) => {
+  if (checkUserData(user)) {
+    console.log('Valid User Data');
+  } else {
+    console.log('Invalid User Data');
+  }
 };

@@ -6,7 +6,7 @@
     "shutdownAction": "stopCompose",
     "containerUser": "developer",
     "updateRemoteUserUID": true,
-    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && sudo chmod a+w /home/developer/develop/node_modules && sudo chown 1000:1000 /var/run/docker.sock",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && sudo chmod a+w /home/developer/develop/node_modules",
     "customizations": {
         "vscode": {
             "extensions": [
