@@ -1,0 +1,120 @@
+<<<<<<< HEAD:.devcontainer/devcontainer.json
+{
+    "name": "mibreit_web_tooling",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "mibreit-web-dev",
+    "workspaceFolder": "/home/developer/develop",
+    "shutdownAction": "stopCompose",
+    "containerUser": "developer",
+    "updateRemoteUserUID": true,
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && sudo chmod a+w /home/developer/develop/node_modules",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "asciidoctor.asciidoctor-vscode",
+                "redhat.vscode-yaml",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "yoavbls.pretty-ts-errors",
+                "bmewburn.vscode-intelephense-client",
+                "douglaszaltron.nunjucks-vscode-extensionpack",
+            ],
+            "settings": {
+                "editor.tabSize": 2,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {},
+                "editor.trimAutoWhitespace": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "[javascript]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[css]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[scss]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[typescript]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[json]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[php]": {
+                  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+                },
+                "[html]": {
+                  "editor.defaultFormatter": "vscode.html-language-features"
+                },
+                "[dockerfile]": {
+                  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+                },
+                "typescript.updateImportsOnFileMove.enabled": "always",
+                "javascript.updateImportsOnFileMove.enabled": "always",
+                "html.suggest.html5": true
+            }
+        }
+    }
+=======
+{
+    "name": "mibreit_web_tooling",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "mibreit-web-dev",
+    "workspaceFolder": "/home/developer/develop",
+    "shutdownAction": "stopCompose",
+    "containerUser": "developer",
+    "updateRemoteUserUID": true,
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && sudo chmod a+w /home/developer/develop/node_modules && sudo chown 1000:1000 /var/run/docker.sock",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "asciidoctor.asciidoctor-vscode",
+                "redhat.vscode-yaml",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "yoavbls.pretty-ts-errors",
+                "bmewburn.vscode-intelephense-client",
+                "douglaszaltron.nunjucks-vscode-extensionpack",
+            ],
+            "settings": {
+                "editor.tabSize": 2,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {},
+                "editor.trimAutoWhitespace": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "[javascript]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[css]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[scss]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[typescript]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[json]": {
+                  "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[php]": {
+                  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+                },
+                "[html]": {
+                  "editor.defaultFormatter": "vscode.html-language-features"
+                },
+                "[dockerfile]": {
+                  "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+                },
+                "typescript.updateImportsOnFileMove.enabled": "always",
+                "javascript.updateImportsOnFileMove.enabled": "always",
+                "html.suggest.html5": true
+            }
+        }
+    }
+>>>>>>> f718e8d (added cookiecutter module):{{cookiecutter.project_slug}}/.devcontainer/devcontainer.json
+}

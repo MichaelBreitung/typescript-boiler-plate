@@ -1,9 +1,16 @@
-# Typescript Boilerplate
+# Coworker Module Template
 
-This project can be used as base for TypeScript projects. The project is setup using [Vite](https://vitejs.dev/guide/). Under "vite.config.js", you'll find the custom [Rollup](https://rollupjs.org/) config containing different outputs. Based on your project, you can remove obsolete outputs.
+This template creates a basic Typescript library project.
+To create a project:
 
-## Prerequisites
+1) Install Python on your system if you don't have it already.
+2) Install [Cookiecutter](https://www.cookiecutter.io/): `pip3 install cookiecutter`.
+3) Create the project: `cookiecutter https://github.com/MichaelBreitung/typescript-boiler-plate.git`
+4) When asked for a project name, provide one. Ideally, use a single word.
+5) Next you'll be asked for the "project_slug". This will be used as folder name for the project and as name for the library.
+6) You can also select if you want only a ESM, a CJS, or a IIFE module. Or you can select to create "all".
 
+<<<<<<< HEAD
 This project uses a Dev Container to provide the required tools for Web Development. You must have VS Code and the Dev Containers extension installed on your host machine as well as the Docker Engine. On Windows, you can use Docker Desktop, for example. To avoid problems with the mounting of ssh keys, it is recommended, though, to use WSL2 with a Ubuntu distribution and install Docker there.
 
 Here are three video tutorials that will get you started with Docker and Dev Containers:
@@ -48,3 +55,7 @@ The three versions are located in three different folders:
 - **lib-iife** - This folder contains a build targeting browser use via the ``<script>`` tag. 
 
 All code is minified per default. Console logs are stripped.
+=======
+A new folder with the project will be created under "project_slug".
+Git will already be initialized.
+>>>>>>> f718e8d (added cookiecutter module)
