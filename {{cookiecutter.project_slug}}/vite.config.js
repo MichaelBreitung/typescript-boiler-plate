@@ -122,7 +122,7 @@ export default defineConfig({
       preserveEntrySignatures: true,
       input: 'src/index.ts',
       output: [
-{%- if cookiecutter.license == "all" -%}
+{%- if cookiecutter.project_type == "all" -%}
         {
           format: 'esm',
           dir: 'lib',
@@ -142,7 +142,7 @@ export default defineConfig({
           format: 'cjs',
           entryFileNames: `{{ cookiecutter.project_slug }}.cjs`,
         },
-{%- elif cookiecutter.license == "esm" -%}
+{%- elif cookiecutter.project_type == "esm" -%}
         {
           format: 'esm',
           dir: 'lib',
@@ -150,13 +150,13 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
         },
-{%- elif cookiecutter.license == "cjs" -%}
+{%- elif cookiecutter.project_type == "cjs" -%}
         {
           dir: 'lib-cjs',
           format: 'cjs',
           entryFileNames: `{{ cookiecutter.project_slug }}.cjs`,
         },
-{%- elif cookiecutter.license == "iife" -%}
+{%- elif cookiecutter.project_type == "iife" -%}
         {
           dir: 'lib-iife',
           format: 'iife',
