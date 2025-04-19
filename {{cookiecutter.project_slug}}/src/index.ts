@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/index.ts
 import testSVG from './test.svg';
 import typia from 'typia';
 
@@ -44,25 +43,3 @@ export const isValidUserData = (user: unknown) => {
     console.log('Invalid User Data');
   }
 };
-=======
-import testSVG from './test.svg';
-
-export class TestClass {
-  private _testMember: string;
-
-  constructor() {
-    this._testMember = 'Test';
-  }
-
-  public toString(): string {
-    return this._testMember;
-  }
-}
-
-export const test = () => {
-  const test = new TestClass();
-  console.log('Class: ' + test);
-
-  console.log('SVG: ', testSVG);
-};
->>>>>>> f718e8d (added cookiecutter module):{{cookiecutter.project_slug}}/src/index.ts
