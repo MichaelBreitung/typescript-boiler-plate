@@ -3,8 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+{%- if cookiecutter.project_type == "cjs" -%}
   "main": "lib-cjs/index.cjs",
+{% endif -%}
+{%- if cookiecutter.project_type == "esm" -%}
   "module": "lib/index.js",
+{% endif -%}
   "types": "lib-types",
   "scripts": {
     "dev": "vite",
