@@ -8,9 +8,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 
 RUN ln -s $NVM_DIR/versions/node/$NODE_VERSION/bin/node /usr/local/bin/node && \
   ln -s $NVM_DIR/versions/node/$NODE_VERSION/bin/npm /usr/local/bin/npm && \
-  ln -s $NVM_DIR/versions/node/$NODE_VERSION/bin/npx /usr/local/bin/npx && \
-  npm install -g gulp-cli && \
-  ln -s $NVM_DIR/versions/node/$NODE_VERSION/bin/gulp /usr/local/bin/gulp
+  ln -s $NVM_DIR/versions/node/$NODE_VERSION/bin/npx /usr/local/bin/npx
 
 # setup developer user
 ENV UID=${UID:-1000}

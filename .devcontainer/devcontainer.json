@@ -17,21 +17,15 @@
                 "eamodio.gitlens",
                 "esbenp.prettier-vscode",
                 "yoavbls.pretty-ts-errors",
-                "ms-python.python",
-                "ms-python.mypy-type-checker",
-                "ms-python.pylint",
-                "ms-python.black-formatter",
                 "bmewburn.vscode-intelephense-client",
                 "douglaszaltron.nunjucks-vscode-extensionpack",
-                "okitavera.vscode-nunjucks-formatter",
-                "eiminsasete.apacheconf-snippets"
             ],
             "settings": {
                 "editor.tabSize": 2,
                 "editor.formatOnSave": true,
                 "editor.codeActionsOnSave": {},
                 "editor.trimAutoWhitespace": true,
-                "editor.defaultFormatter": "ms-python.black-formatter",
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
                 "[javascript]": {
                   "editor.defaultFormatter": "esbenp.prettier-vscode"
                 },
@@ -53,29 +47,12 @@
                 "[html]": {
                   "editor.defaultFormatter": "vscode.html-language-features"
                 },
-                "[njk]": {
-                  "editor.defaultFormatter": "douglaszaltron.nunjucks-vscode-extensionpack"
-                },
-                "[nunjucks]": {
-                  "editor.formatOnSave": false,
-                  "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
-                },
                 "[dockerfile]": {
                   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
                 },
                 "typescript.updateImportsOnFileMove.enabled": "always",
                 "javascript.updateImportsOnFileMove.enabled": "always",
-                "mypy-type-checker.importStrategy": "fromEnvironment",
-                "mypy-type-checker.args": ["--strict", "--show-error-codes", "--cache-dir", "build/.mypy_cache"],
-                "python.pythonPath": "/usr/bin/python3",
-                "html.suggest.html5": true,
-                "emmet.includeLanguages": {
-                  "njk": "html"
-                },
-                "files.associations": {
-                  "*.njk": "njk",
-                  ".htaccess": "shellscript"
-                }
+                "html.suggest.html5": true
             }
         }
     }
