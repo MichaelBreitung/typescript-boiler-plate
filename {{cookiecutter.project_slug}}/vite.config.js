@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import { LibraryName, LibraryFileName } from './projectInfo';
 import UnpluginTypia from '@ryoppippi/unplugin-typia/vite';
 
 import strip from '@rollup/plugin-strip';
