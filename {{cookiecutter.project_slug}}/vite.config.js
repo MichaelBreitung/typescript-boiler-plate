@@ -54,14 +54,14 @@ export default defineConfig({
         {
           dir: 'lib-iife',
           format: 'iife',
-          name: {{ cookiecutter.project_slug }},
+          name: "{{ cookiecutter.project_slug }}",
           entryFileNames: `{{ cookiecutter.project_slug }}.min.js`,
           exports: 'named',
         },
         {
           dir: 'lib-cjs',
           format: 'cjs',
-          entryFileNames: `{{ cookiecutter.project_slug }}.cjs`,
+          entryFileNames: `index.cjs`,
         },
 {%- elif cookiecutter.project_type == "esm" -%}
         {
