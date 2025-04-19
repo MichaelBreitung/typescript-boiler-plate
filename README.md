@@ -1,4 +1,4 @@
-# Coworker Module Template
+# Typescript Library Template
 
 This template creates a basic Typescript library project.
 To create a project:
