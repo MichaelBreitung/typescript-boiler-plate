@@ -2,7 +2,7 @@
     "project_name": "Your Project Name - Ideally a Single Word",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_css_prefix": "A short prefix that is prepended to all CSS classes",
-    "project_type:": [
+    "project_type": [
         "esm",
         "cjs",
         "iife",
