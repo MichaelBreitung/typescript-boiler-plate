@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  mibreit-web-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/developer/develop/node_modules
+      - ..:/home/developer/develop
+      - ${HOME}/.ssh:/home/developer/.ssh
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - USER=developer
+      - UID
+  

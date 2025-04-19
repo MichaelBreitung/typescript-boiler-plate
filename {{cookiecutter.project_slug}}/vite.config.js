@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import { LibraryName, LibraryFileName } from './projectInfo';
 import UnpluginTypia from '@ryoppippi/unplugin-typia/vite';
 
 import strip from '@rollup/plugin-strip';
@@ -33,7 +32,7 @@ const svgImportPlugin = function () {
 export default defineConfig({
   css: {
     modules: {
-      generateScopedName: 'mbg__[local]', // mbg prefix for mibreit gallery
+      generateScopedName: '{{ cookiecutter.project_css_prefix }}__[local]',
     },
   },
   plugins: [UnpluginTypia({}), svgImportPlugin()],
@@ -44,6 +43,7 @@ export default defineConfig({
       preserveEntrySignatures: true,
       input: 'src/index.ts',
       output: [
+{%- if cookiecutter.project_type == "all" -%}
         {
           format: 'esm',
           dir: 'lib',
@@ -54,15 +54,38 @@ export default defineConfig({
         {
           dir: 'lib-iife',
           format: 'iife',
-          name: LibraryName,
-          entryFileNames: `${LibraryFileName}.min.js`,
+          name: '{{ cookiecutter.project_lib_name }}',
+          entryFileNames: '{{ cookiecutter.project_slug }}.min.js',
           exports: 'named',
         },
         {
           dir: 'lib-cjs',
           format: 'cjs',
-          entryFileNames: `${LibraryFileName}.cjs`,
+          entryFileNames: 'index.cjs',
         },
+{%- elif cookiecutter.project_type == "esm" -%}
+        {
+          format: 'esm',
+          dir: 'lib',
+          entryFileNames: '[name].js',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+        },
+{%- elif cookiecutter.project_type == "cjs" -%}
+        {
+          dir: 'lib-cjs',
+          format: 'cjs',
+          entryFileNames: `{{ cookiecutter.project_slug }}.cjs`,
+        },
+{%- elif cookiecutter.project_type == "iife" -%}
+        {
+          dir: 'lib-iife',
+          format: 'iife',
+          name: {{ cookiecutter.project_slug }},
+          entryFileNames: `{{ cookiecutter.project_slug }}.min.js`,
+          exports: 'named',
+        },
+{% endif %}
       ],
       plugins: [
         strip({
@@ -73,6 +96,6 @@ export default defineConfig({
     },
   },
   server: {
-    open: 'demo/gallery.html',
+    open: 'index.html',
   },
 });
